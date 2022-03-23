@@ -7,9 +7,12 @@ export default function Footer(props) {
   const { changePage } = props;
   return (
     <footer>
-      <Navigation changePage={(index) => {
-        changePage(index);
-      }}
+      <Navigation
+        changePage={(index) => {
+          changePage(index);
+        }}
+        propClass="black"
+        typeClass="footer_navigation"
       />
       <CoffeeLine />
     </footer>

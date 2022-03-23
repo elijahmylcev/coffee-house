@@ -24,8 +24,9 @@ export default class Navigation extends Component {
 
   render() {
     const { buttons } = this.state;
-    const { propClass } = this.props;
-    const classesList = `menu ${propClass}`;
+    const { propClass, typeClass } = this.props;
+    const classesList = `menu__item ${propClass}`;
+    const navClass = `menu ${typeClass}`;
     const elements = buttons.map(({ text, id, logo }) => {
       if (logo) {
         return (
@@ -33,7 +34,7 @@ export default class Navigation extends Component {
             type="button"
             key={id}
             value={id}
-            className="menu__item"
+            className={classesList}
             onClick={this.clickOnPage}
           >
             <img src={logotype} alt="Logo" className="menu__logo" />
@@ -45,7 +46,7 @@ export default class Navigation extends Component {
           type="button"
           key={id}
           value={id}
-          className="menu__item"
+          className={classesList}
           onClick={this.clickOnPage}
         >
           {text}
@@ -54,7 +55,7 @@ export default class Navigation extends Component {
     });
     return (
       <div className="container">
-        <nav className={classesList}>
+        <nav className={navClass}>
           {elements}
         </nav>
       </div>
@@ -65,4 +66,5 @@ export default class Navigation extends Component {
 Navigation.propTypes = {
   changePage: propTypes.func.isRequired,
   propClass: propTypes.string.isRequired,
+  typeClass: propTypes.string.isRequired,
 };

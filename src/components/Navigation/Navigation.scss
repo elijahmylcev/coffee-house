@@ -4,6 +4,7 @@
   align-items: flex-end;
   flex-direction: row;
   &__item {
+    font-family: "Merienda";
     background: none;
     border: none;
     text-align: end;
@@ -16,7 +17,6 @@
 }
 
 .black {
-  margin: 0 auto;
   color: black;
 }
 .white {

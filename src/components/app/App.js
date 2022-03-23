@@ -104,7 +104,7 @@ class App extends Component {
       <div className="App">
         <Header changePage={this.changePage} sendClass={content.classes} {...content} />
         <About {...about[0]} />
-        <Footer changePage={this.changePage} propClass="black" />
+        <Footer changePage={this.changePage} />
       </div>
     );
   }
