@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  &__line {
+    width: 60px;
+    height: 1px;
+    background: #000;
+  }
+}

@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import Header from '../Header/Header';
-import Navigation from '../Navigation/Navigation';
 import './App.scss';
 
 class App extends Component {
@@ -17,10 +16,9 @@ class App extends Component {
   }
 
   render() {
-    const { contentHeader, buttons } = this.state;
+    const { contentHeader } = this.state;
     return (
       <div className="App">
-        <Navigation {...buttons} />
         <Header {...contentHeader.main} />
       </div>
     );

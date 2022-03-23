@@ -17,8 +17,6 @@ export default class Navigation extends Component {
 
   render() {
     const { buttons } = this.state;
-    console.log(buttons);
-    console.log(Array.isArray(buttons));
     const elements = buttons.map(({ text, id, logo }) => {
       if (logo) {
         return (
