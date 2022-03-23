@@ -19,12 +19,13 @@ export default class Navigation extends Component {
   clickOnPage(e) {
     e.preventDefault();
     const { changePage } = this.props;
-    console.log(e.target.value);
     changePage(e.target.value);
   }
 
   render() {
     const { buttons } = this.state;
+    const { propClass } = this.props;
+    const classesList = `menu ${propClass}`;
     const elements = buttons.map(({ text, id, logo }) => {
       if (logo) {
         return (
@@ -53,7 +54,7 @@ export default class Navigation extends Component {
     });
     return (
       <div className="container">
-        <nav className="menu">
+        <nav className={classesList}>
           {elements}
         </nav>
       </div>
@@ -63,4 +64,5 @@ export default class Navigation extends Component {
 
 Navigation.propTypes = {
   changePage: propTypes.func.isRequired,
+  propClass: propTypes.string.isRequired,
 };

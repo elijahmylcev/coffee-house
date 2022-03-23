@@ -3,6 +3,8 @@ import Header from '../Header/Header';
 import CoffeeLine from '../CoffeeLine/CoffeeLine';
 
 import './App.scss';
+import About from '../About/About';
+import Footer from '../Footer/Footer';
 
 class App extends Component {
   constructor() {
@@ -31,7 +33,7 @@ class App extends Component {
           id: 2,
           name: 'ourCoffee',
           layout: (
-            <h1>Our Coffee</h1>
+            <h1 className="secondTitle">Our Coffee</h1>
           ),
           status: false,
           classes: 'header__ourCoffee',
@@ -40,10 +42,34 @@ class App extends Component {
         {
           id: 3,
           name: 'forYourPleasure',
-          layout: (<h1>For Your Pleasure</h1>),
+          layout: (<h1 className="secondTitle">For Your Pleasure</h1>),
           status: false,
           classes: 'header__forYourPleasure',
 
+        },
+      ],
+      about: [
+        {
+          id: 1,
+          title: 'About Us',
+          description: (
+            <p>
+              Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+              Afraid at highly months do things on at. Situation recommend objection do intention
+              so questions. As greatly removed calling pleased improve an. Last ask him cold feel
+              met spot shy want. Children me laughing we prospect answered followed. At it went
+              is song that held help face.
+              <br />
+              {' '}
+              <br />
+
+              Now residence dashwoods she excellent you. Shade being under his bed her, Much
+              read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant
+              horrible but confined day end marriage. Eagerness furniture set preserved far
+              recommend. Did even but nor are most gave hope. Secure active living depend son
+              repair day ladies now.
+            </p>
+          ),
         },
       ],
     };
@@ -56,7 +82,6 @@ class App extends Component {
       contentHeader.map((item) => {
         if (item.id === number) {
           item.status = true;
-          console.log(item.status, item.id);
           return item;
         }
         item.status = false;
@@ -70,13 +95,16 @@ class App extends Component {
     let content;
     contentHeader.forEach((item) => {
       if (item.status) {
-        console.log(item);
         content = item;
       }
     });
+
+    const { about } = this.state;
     return (
       <div className="App">
         <Header changePage={this.changePage} sendClass={content.classes} {...content} />
+        <About {...about[0]} />
+        <Footer changePage={this.changePage} propClass="black" />
       </div>
     );
   }

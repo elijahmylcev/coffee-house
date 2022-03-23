@@ -9,11 +9,17 @@ header {
   }
   &__ourCoffee {
     background: no-repeat center/cover url(../../img/OurCoffee-bg.png);
+    padding-bottom: 84px;
     
   }
   &__forYourPleasure {
     background: no-repeat center/cover url(../../img/forYourPleasure.png);
+    padding-bottom: 84px;
   }
+}
+
+.secondTitle {
+  margin: 60px auto 0 auto;
 }
 
 .wrapperMain {

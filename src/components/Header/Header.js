@@ -8,9 +8,11 @@ export default class Header extends Component {
     const { layout, sendClass, changePage } = this.props;
     return (
       <header className={sendClass}>
-        <Navigation changePage={(index) => {
-          changePage(index);
-        }}
+        <Navigation
+          changePage={(index) => {
+            changePage(index);
+          }}
+          propClass="white"
         />
         <div className="container">
           {layout}
