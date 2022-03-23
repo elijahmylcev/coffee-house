@@ -10,3 +10,8 @@ body {
   src: local("Merienda"),
   url(./fonts/Merienda-Bold.ttf) format("truetype");
 }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
