@@ -1,8 +1,19 @@
 header {
   padding-top: 20px;
-  background: no-repeat center/cover url(../../img/main-bg.png);
   text-align: center;
   color: #fff
+}
+.header {
+  &__main {
+    background: no-repeat center/cover url(../../img/main-bg.png);
+  }
+  &__ourCoffee {
+    background: no-repeat center/cover url(../../img/OurCoffee-bg.png);
+    
+  }
+  &__forYourPleasure {
+    background: no-repeat center/cover url(../../img/forYourPleasure.png);
+  }
 }
 
 .wrapperMain {

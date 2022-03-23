@@ -1,5 +1,5 @@
 import { Component } from 'react';
-// import propTypes from 'prop-types';
+import propTypes from 'prop-types';
 import './Navigation.scss';
 import logotype from '../../icons/icon.png';
 
@@ -9,10 +9,18 @@ export default class Navigation extends Component {
     this.state = {
       buttons: [
         { id: 1, text: 'Coffee house', logo: true },
-        { id: 2, text: 'Our coffee', active: false },
-        { id: 3, text: 'For your pleasure', active: false },
+        { id: 2, text: 'Our coffee', logo: false },
+        { id: 3, text: 'For your pleasure', logo: false },
       ],
     };
+    this.clickOnPage = this.clickOnPage.bind(this);
+  }
+
+  clickOnPage(e) {
+    e.preventDefault();
+    const { changePage } = this.props;
+    console.log(e.target.value);
+    changePage(e.target.value);
   }
 
   render() {
@@ -21,9 +29,11 @@ export default class Navigation extends Component {
       if (logo) {
         return (
           <button
-            type="submit"
+            type="button"
             key={id}
+            value={id}
             className="menu__item"
+            onClick={this.clickOnPage}
           >
             <img src={logotype} alt="Logo" className="menu__logo" />
             {text}
@@ -31,9 +41,11 @@ export default class Navigation extends Component {
         );
       } return (
         <button
-          type="submit"
+          type="button"
           key={id}
+          value={id}
           className="menu__item"
+          onClick={this.clickOnPage}
         >
           {text}
         </button>
@@ -48,3 +60,7 @@ export default class Navigation extends Component {
     );
   }
 }
+
+Navigation.propTypes = {
+  changePage: propTypes.func.isRequired,
+};

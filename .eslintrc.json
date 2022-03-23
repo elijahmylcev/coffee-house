@@ -38,6 +38,10 @@
         ],
         "no-console": "off",
         "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp"] }],
-        "no-param-reassign": ["error", { "props": false }]
+        "no-param-reassign": ["error", { "props": false }],
+        "react/no-unstable-nested-components": [
+            "off" ,
+            { "allowAsProps": false }
+          ]
   }
 }

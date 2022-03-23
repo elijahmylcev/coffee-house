@@ -21,28 +21,48 @@ class App extends Component {
                 <br />
                 Want to try our beans?
               </p>
-              <button type="button" className="mainButton">More</button>
+              <button type="submit" className="mainButton">More</button>
             </div>
           ),
           status: true,
-          bg: '../../img/main-bg.png',
+          classes: 'header__main',
         },
         {
-          id: 1,
+          id: 2,
           name: 'ourCoffee',
-          layout: 'Our Coffee',
+          layout: (
+            <h1>Our Coffee</h1>
+          ),
           status: false,
-          bg: '../../img/OurCoffee-bg.png',
+          classes: 'header__ourCoffee',
+
         },
         {
-          id: 1,
+          id: 3,
           name: 'forYourPleasure',
-          layout: 'For Your Pleasure',
+          layout: (<h1>For Your Pleasure</h1>),
           status: false,
-          bg: '../../img/forYourPlesaure.png',
+          classes: 'header__forYourPleasure',
+
         },
       ],
     };
+    this.changePage = this.changePage.bind(this);
+  }
+
+  changePage(index) {
+    const number = Number(index);
+    this.setState(({ contentHeader }) => {
+      contentHeader.map((item) => {
+        if (item.id === number) {
+          item.status = true;
+          console.log(item.status, item.id);
+          return item;
+        }
+        item.status = false;
+        return item;
+      });
+    }, this.forceUpdate);
   }
 
   render() {
@@ -50,13 +70,13 @@ class App extends Component {
     let content;
     contentHeader.forEach((item) => {
       if (item.status) {
+        console.log(item);
         content = item;
       }
     });
-    console.log(content.bg);
     return (
       <div className="App">
-        <Header sendUrl={content.bg} {...content} />
+        <Header changePage={this.changePage} sendClass={content.classes} {...content} />
       </div>
     );
   }

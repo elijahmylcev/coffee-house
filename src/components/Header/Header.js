@@ -4,20 +4,14 @@ import Navigation from '../Navigation/Navigation';
 import './Header.scss';
 
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      layout: props.layout,
-    };
-  }
-
   render() {
-    const { layout } = this.state;
-    const { sendUrl } = this.props;
-    console.log(sendUrl);
+    const { layout, sendClass, changePage } = this.props;
     return (
-      <header>
-        <Navigation />
+      <header className={sendClass}>
+        <Navigation changePage={(index) => {
+          changePage(index);
+        }}
+        />
         <div className="container">
           {layout}
         </div>
@@ -27,6 +21,7 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  layout: propTypes.objectOf.isRequired,
-  sendUrl: propTypes.string.isRequired,
+  layout: propTypes.func.isRequired,
+  sendClass: propTypes.string.isRequired,
+  changePage: propTypes.func.isRequired,
 };
