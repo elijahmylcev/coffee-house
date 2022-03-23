@@ -13,7 +13,7 @@ class App extends Component {
           id: 1,
           name: 'main',
           layout: (
-            <div>
+            <div className="wrapperMain">
               <h1>Everything You Love About Coffee</h1>
               <CoffeeLine />
               <p>
@@ -21,22 +21,25 @@ class App extends Component {
                 <br />
                 Want to try our beans?
               </p>
-              <button type="button">More</button>
+              <button type="button" className="mainButton">More</button>
             </div>
           ),
           status: true,
+          bg: '../../img/main-bg.png',
         },
         {
           id: 1,
           name: 'ourCoffee',
           layout: 'Our Coffee',
           status: false,
+          bg: '../../img/OurCoffee-bg.png',
         },
         {
           id: 1,
           name: 'forYourPleasure',
           layout: 'For Your Pleasure',
           status: false,
+          bg: '../../img/forYourPlesaure.png',
         },
       ],
     };
@@ -50,9 +53,10 @@ class App extends Component {
         content = item;
       }
     });
+    console.log(content.bg);
     return (
       <div className="App">
-        <Header {...content} />
+        <Header sendUrl={content.bg} {...content} />
       </div>
     );
   }

@@ -1,4 +1,14 @@
-
+.mainButton {
+  border: 1px solid #FFFFFF;
+  padding: 5px 42px;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  background: none;
+  color: #FFFFFF;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
