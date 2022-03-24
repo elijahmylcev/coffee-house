@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      contentHeader: [
+      contentPage: [
         {
           id: 1,
           name: 'main',
@@ -28,6 +28,7 @@ class App extends Component {
           ),
           status: true,
           classes: 'header__main',
+          mainLayout: (<MainPage />),
         },
         {
           id: 2,
@@ -37,7 +38,7 @@ class App extends Component {
           ),
           status: false,
           classes: 'header__ourCoffee',
-
+          mainLayout: (<p>Hello</p>),
         },
         {
           id: 3,
@@ -45,7 +46,7 @@ class App extends Component {
           layout: (<h1 className="secondTitle">For Your Pleasure</h1>),
           status: false,
           classes: 'header__forYourPleasure',
-
+          mainLayout: (<p>Hello</p>),
         },
       ],
     };
@@ -54,8 +55,8 @@ class App extends Component {
 
   changePage(index) {
     const number = Number(index);
-    this.setState(({ contentHeader }) => {
-      contentHeader.map((item) => {
+    this.setState(({ contentPage }) => {
+      contentPage.map((item) => {
         if (item.id === number) {
           item.status = true;
           return item;
@@ -67,9 +68,9 @@ class App extends Component {
   }
 
   render() {
-    const { contentHeader } = this.state;
+    const { contentPage } = this.state;
     let content;
-    contentHeader.forEach((item) => {
+    contentPage.forEach((item) => {
       if (item.status) {
         content = item;
       }
@@ -78,7 +79,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header changePage={this.changePage} sendClass={content.classes} {...content} />
-        <MainPage />
+        <main>
+          {content.mainLayout}
+        </main>
         <Footer changePage={this.changePage} />
       </div>
     );
