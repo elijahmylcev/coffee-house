@@ -5,6 +5,7 @@ import CoffeeLine from '../CoffeeLine/CoffeeLine';
 import './App.scss';
 import Footer from '../Footer/Footer';
 import MainPage from '../pages/MainPage/MainPage';
+import OurCoffee from '../pages/OurCoffee/OurCoffee';
 
 class App extends Component {
   constructor() {
@@ -38,7 +39,7 @@ class App extends Component {
           ),
           status: false,
           classes: 'header__ourCoffee',
-          mainLayout: (<p>Hello</p>),
+          mainLayout: (<OurCoffee />),
         },
         {
           id: 3,
