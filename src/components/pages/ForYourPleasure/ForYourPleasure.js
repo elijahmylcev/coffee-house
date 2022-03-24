@@ -1,15 +1,15 @@
 import { Component } from 'react';
-import './OurCoffee.scss';
+import './ForYourPleasure.scss';
 import About from '../../About/About';
-import photo from '../../../img/mask-group.png';
+import photo from '../../../img/ForYouPleasure.png';
 
-export default class OurCoffee extends Component {
+export default class ForYourPleasure extends Component {
   constructor() {
     super();
     this.state = {
       about: {
-        id: 2,
-        title: 'About our beans',
+        id: 3,
+        title: 'About our goods',
         description: (
           <p>
             Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.

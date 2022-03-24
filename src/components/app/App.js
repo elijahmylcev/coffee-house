@@ -6,6 +6,7 @@ import './App.scss';
 import Footer from '../Footer/Footer';
 import MainPage from '../pages/MainPage/MainPage';
 import OurCoffee from '../pages/OurCoffee/OurCoffee';
+import ForYourPleasure from '../pages/ForYourPleasure/ForYourPleasure';
 
 class App extends Component {
   constructor() {
@@ -47,7 +48,7 @@ class App extends Component {
           layout: (<h1 className="secondTitle">For Your Pleasure</h1>),
           status: false,
           classes: 'header__forYourPleasure',
-          mainLayout: (<p>Hello</p>),
+          mainLayout: (<ForYourPleasure />),
         },
       ],
     };
