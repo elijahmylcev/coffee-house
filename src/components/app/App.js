@@ -5,6 +5,7 @@ import CoffeeLine from '../CoffeeLine/CoffeeLine';
 import './App.scss';
 import About from '../About/About';
 import Footer from '../Footer/Footer';
+import OurBest from '../OurBesct/OurBest';
 
 class App extends Component {
   constructor() {
@@ -104,6 +105,7 @@ class App extends Component {
       <div className="App">
         <Header changePage={this.changePage} sendClass={content.classes} {...content} />
         <About {...about[0]} />
+        <OurBest />
         <Footer changePage={this.changePage} />
       </div>
     );
