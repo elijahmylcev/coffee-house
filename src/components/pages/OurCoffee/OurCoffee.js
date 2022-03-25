@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './OurCoffee.scss';
 import About from '../../About/About';
 import photo from '../../../img/mask-group.png';
+import SearchPanel from './SearchPanel/SearchPanel';
 
 export default class OurCoffee extends Component {
   constructor() {
@@ -36,6 +37,7 @@ export default class OurCoffee extends Component {
             <img src={photo} alt="CoolPhoto" />
             <About {...about} />
           </div>
+          <SearchPanel />
           <div className="stroke" />
         </div>
       </section>

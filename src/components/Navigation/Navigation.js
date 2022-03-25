@@ -66,5 +66,8 @@ export default class Navigation extends Component {
 Navigation.propTypes = {
   changePage: propTypes.func.isRequired,
   propClass: propTypes.string.isRequired,
-  typeClass: propTypes.string.isRequired,
+  typeClass: propTypes.string,
+};
+Navigation.defaultProps = {
+  typeClass: '',
 };
