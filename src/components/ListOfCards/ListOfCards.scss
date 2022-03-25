@@ -26,6 +26,11 @@
   line-height: 20px;
   text-align: center;
   color: #000000;
+  &__img {
+    display: block;
+    margin: 0 auto;
+    max-width: 167px;
+  }
   &__title {
     width: 100%;
     margin-top: 14px;
