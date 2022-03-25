@@ -37,8 +37,9 @@ export default class OurCoffee extends Component {
             <img src={photo} alt="CoolPhoto" />
             <About {...about} />
           </div>
-          <SearchPanel />
           <div className="stroke" />
+          <SearchPanel />
+
         </div>
       </section>
     );

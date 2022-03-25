@@ -6,7 +6,7 @@ export default class SearchPanel extends Component {
     super();
     this.state = {
       filterButtons: [
-        { id: 1, name: 'All', status: false },
+        { id: 1, name: 'All', status: true },
         { id: 2, name: 'Brazil', status: false },
         { id: 3, name: 'Kenya', status: false },
         { id: 4, name: 'Columbia', status: false },
@@ -16,15 +16,21 @@ export default class SearchPanel extends Component {
 
   render() {
     const { filterButtons } = this.state;
-    const elements = filterButtons.map((item) => (
-      <button
-        className="filter__buttons_element"
-        type="button"
-        key={item.id}
-      >
-        {item.name}
-      </button>
-    ));
+    const elements = filterButtons.map((item) => {
+      let classList = 'filter__buttons_element';
+      if (item.status) {
+        classList += ' active';
+      }
+      return (
+        <button
+          className={classList}
+          type="button"
+          key={item.id}
+        >
+          {item.name}
+        </button>
+      );
+    });
     return (
       <section>
         <div className="container">
