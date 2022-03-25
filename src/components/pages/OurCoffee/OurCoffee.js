@@ -3,6 +3,7 @@ import './OurCoffee.scss';
 import About from '../../About/About';
 import photo from '../../../img/mask-group.png';
 import SearchPanel from './SearchPanel/SearchPanel';
+import ListOfCards from '../../ListOfCards/ListOfCards';
 
 export default class OurCoffee extends Component {
   constructor() {
@@ -39,7 +40,7 @@ export default class OurCoffee extends Component {
           </div>
           <div className="stroke" />
           <SearchPanel />
-
+          <ListOfCards />
         </div>
       </section>
     );
