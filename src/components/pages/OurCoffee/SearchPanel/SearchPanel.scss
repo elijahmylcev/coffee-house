@@ -8,9 +8,10 @@
     display: flex;
     align-items: center;
     input {
+      box-sizing: border-box;
       font-family: Merienda;
       max-width: 180px;
-      padding: 6px 36px;
+      padding: 6px 29px;
       background: none;
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
       border: none;

@@ -25,7 +25,7 @@ class App extends Component {
                 <br />
                 Want to try our beans?
               </p>
-              <button type="submit" className="mainButton">More</button>
+              <button type="button" onClick={() => this.changePage(2)} className="mainButton">More</button>
             </div>
           ),
           status: true,
