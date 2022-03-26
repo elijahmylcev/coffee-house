@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './ForYourPleasure.scss';
 import About from '../../About/About';
 import photo from '../../../img/ForYouPleasure.png';
+import ListOfCards from '../../ListOfCards/ListOfCards';
 
 export default class ForYourPleasure extends Component {
   constructor() {
@@ -37,6 +38,7 @@ export default class ForYourPleasure extends Component {
             <About {...about} />
           </div>
           <div className="stroke" />
+          <ListOfCards />
         </div>
       </section>
     );
