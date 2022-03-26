@@ -52,7 +52,12 @@ export default class ListOfCards extends Component {
   render() {
     const test = this.filteredList();
     const elements = test.map((element) => (
-      <div className="card" key={element.id}>
+      <div
+        onClick={() => console.log(element.id)}
+        className="card"
+        key={element.id}
+        aria-hidden="true"
+      >
         <img src={element.img} alt="Coffee" className="card__img" />
         <div className="card__title">{element.name}</div>
         <span className="card__country">{element.country}</span>

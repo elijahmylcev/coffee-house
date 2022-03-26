@@ -27,6 +27,10 @@ export default class OurCoffee extends Component {
         ),
       },
       filter: 'All',
+      currentCard: {
+        status: true,
+        card: {},
+      },
     };
     this.changeFilter = this.changeFilter.bind(this);
   }
@@ -37,10 +41,22 @@ export default class OurCoffee extends Component {
     });
   }
 
+  // currentCardInList() {
+  //   const { currentCard } = this.state;
+  //   console.log(currentCard.status);
+  // }
+
   render() {
-    const { about, filter } = this.state;
-    return (
-      <section>
+    const { about, filter, currentCard } = this.state;
+    const layout = () => {
+      if (currentCard.status) {
+        return (
+          <div className="container">
+            <p>Hello</p>
+          </div>
+        );
+      }
+      return (
         <div className="container">
           <div className="info">
             <img src={photo} alt="CoolPhoto" />
@@ -50,6 +66,11 @@ export default class OurCoffee extends Component {
           <SearchPanel changeFilter={this.changeFilter} />
           <ListOfCards filter={filter} />
         </div>
+      );
+    };
+    return (
+      <section>
+        {layout()}
       </section>
     );
   }
