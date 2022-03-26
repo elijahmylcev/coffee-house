@@ -40,7 +40,7 @@ export default class OurCoffee extends Component {
           </div>
           <div className="stroke" />
           <SearchPanel />
-          <ListOfCards filter="all" />
+          <ListOfCards />
         </div>
       </section>
     );

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './ListOfCards.scss';
-// import propTypes from 'prop-types';
+import propTypes from 'prop-types';
 import cardsList from '../app/cards';
 
 export default class ListOfCards extends Component {
@@ -8,28 +8,52 @@ export default class ListOfCards extends Component {
     super(props);
     this.state = {
       cards: cardsList,
-      filter: 'Kenya',
     };
   }
 
   filteredList() {
-    const { filter, cards } = this.state;
+    const { cards } = this.state;
+    const { filter, isBest } = this.props;
+    if (isBest) {
+      return cards.filter((item) => {
+        if (item.isBest) {
+          return item;
+        }
+        return false;
+      });
+    }
     switch (filter) {
       case 'Brazil':
-        return cards.filter((item) => item.country);
+        return cards.filter((item) => {
+          if (item.country === filter) {
+            return item;
+          }
+          return false;
+        });
       case 'Kenya':
-        return cards.filter((item) => item.country);
+        return cards.filter((item) => {
+          if (item.country === filter) {
+            return item;
+          }
+          return false;
+        });
       case 'Columbia':
-        return cards.filter((item) => item.country);
+        return cards.filter((item) => {
+          if (item.country === filter) {
+            return item;
+          }
+          return false;
+        });
       default:
         return cards;
     }
   }
 
   render() {
-    const { cards } = this.state;
-    this.filteredList();
-    const elements = cards.map((element) => (
+    // const { cards } = this.state;
+    const test = this.filteredList();
+    console.log(test);
+    const elements = test.map((element) => (
       <div className="card" key={element.id}>
         <img src={element.img} alt="Coffee" className="card__img" />
         <div className="card__title">{element.name}</div>
@@ -51,6 +75,11 @@ export default class ListOfCards extends Component {
   }
 }
 
-// ListOfCards.propTypes = {
-//   filter: propTypes.string.isRequired,
-// };
+ListOfCards.propTypes = {
+  filter: propTypes.string,
+  isBest: propTypes.bool,
+};
+ListOfCards.defaultProps = {
+  filter: 'All',
+  isBest: false,
+};
