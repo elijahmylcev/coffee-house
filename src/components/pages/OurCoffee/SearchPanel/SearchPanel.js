@@ -15,10 +15,18 @@ export default class SearchPanel extends Component {
     };
   }
 
-  onClickFilter(name) {
+  onClickFilter(name, id) {
     const { changeFilter } = this.props;
-
-    console.log(name);
+    this.setState(({ filterButtons }) => {
+      filterButtons.map((item) => {
+        if (item.id !== id) {
+          item.status = false;
+          return item;
+        }
+        item.status = true;
+        return item;
+      });
+    });
     changeFilter(name);
   }
 
@@ -34,7 +42,7 @@ export default class SearchPanel extends Component {
           className={classList}
           type="button"
           key={item.id}
-          onClick={() => this.onClickFilter(item.name)}
+          onClick={() => this.onClickFilter(item.name, item.id)}
         >
           {item.name}
         </button>
