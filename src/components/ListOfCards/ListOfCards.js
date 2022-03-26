@@ -14,6 +14,7 @@ export default class ListOfCards extends Component {
   filteredList() {
     const { cards } = this.state;
     const { filter, isBest } = this.props;
+    console.log(filter);
     if (isBest) {
       return cards.filter((item) => {
         if (item.isBest) {
@@ -50,7 +51,6 @@ export default class ListOfCards extends Component {
   }
 
   render() {
-    // const { cards } = this.state;
     const test = this.filteredList();
     console.log(test);
     const elements = test.map((element) => (

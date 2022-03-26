@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import propTypes from 'prop-types';
 import './SearchPanel.scss';
 
 export default class SearchPanel extends Component {
@@ -14,6 +15,13 @@ export default class SearchPanel extends Component {
     };
   }
 
+  onClickFilter(name) {
+    const { changeFilter } = this.props;
+
+    console.log(name);
+    changeFilter(name);
+  }
+
   render() {
     const { filterButtons } = this.state;
     const elements = filterButtons.map((item) => {
@@ -26,6 +34,7 @@ export default class SearchPanel extends Component {
           className={classList}
           type="button"
           key={item.id}
+          onClick={() => this.onClickFilter(item.name)}
         >
           {item.name}
         </button>
@@ -53,3 +62,7 @@ export default class SearchPanel extends Component {
     );
   }
 }
+
+SearchPanel.propTypes = {
+  changeFilter: propTypes.func.isRequired,
+};

@@ -26,11 +26,19 @@ export default class OurCoffee extends Component {
           </p>
         ),
       },
+      filter: 'All',
     };
+    this.changeFilter = this.changeFilter.bind(this);
+  }
+
+  changeFilter(name) {
+    this.setState({
+      filter: name,
+    });
   }
 
   render() {
-    const { about } = this.state;
+    const { about, filter } = this.state;
     return (
       <section>
         <div className="container">
@@ -39,8 +47,8 @@ export default class OurCoffee extends Component {
             <About {...about} />
           </div>
           <div className="stroke" />
-          <SearchPanel />
-          <ListOfCards />
+          <SearchPanel changeFilter={this.changeFilter} />
+          <ListOfCards filter={filter} />
         </div>
       </section>
     );
