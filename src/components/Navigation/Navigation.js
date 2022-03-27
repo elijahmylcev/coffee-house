@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import propTypes from 'prop-types';
 import './Navigation.scss';
-import logotype from '../../icons/icon.png';
+import logotypeWhite from '../../icons/icon.png';
+import logotypeBlack from '../../icons/logoBlack.png';
 
 export default class Navigation extends Component {
   constructor() {
@@ -25,7 +26,16 @@ export default class Navigation extends Component {
   render() {
     const { buttons } = this.state;
     const { propClass, typeClass } = this.props;
-    const classesList = `menu__item ${propClass}`;
+    let classesList;
+    let logotype;
+    if (propClass === 'white') {
+      classesList = `menu__item ${propClass}`;
+      logotype = logotypeWhite;
+    } else {
+      classesList = `menu__item ${propClass}`;
+      logotype = logotypeBlack;
+    }
+
     const navClass = `menu ${typeClass}`;
     const elements = buttons.map(({ text, id, logo }) => {
       if (logo) {
@@ -65,9 +75,10 @@ export default class Navigation extends Component {
 
 Navigation.propTypes = {
   changePage: propTypes.func.isRequired,
-  propClass: propTypes.string.isRequired,
+  propClass: propTypes.string,
   typeClass: propTypes.string,
 };
 Navigation.defaultProps = {
   typeClass: '',
+  propClass: 'black',
 };
