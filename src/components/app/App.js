@@ -19,7 +19,7 @@ class App extends Component {
           layout: (
             <div className="wrapperMain">
               <h1>Everything You Love About Coffee</h1>
-              <CoffeeLine />
+              <CoffeeLine classInp="white" />
               <p>
                 We makes every day full of energy and taste
                 <br />
