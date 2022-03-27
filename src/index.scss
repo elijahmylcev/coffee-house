@@ -9,6 +9,13 @@ body {
   font-family: Merienda;
   src: local("Merienda"),
   url(./fonts/Merienda-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Merienda;
+  src: local("Merienda"),
+  url(./fonts/Merienda-Regular.ttf) format("truetype");
+  font-weight: 400;
 }
 
 .container {

@@ -4,6 +4,7 @@ import About from '../../About/About';
 import photo from '../../../img/mask-group.png';
 import SearchPanel from './SearchPanel/SearchPanel';
 import ListOfCards from '../../ListOfCards/ListOfCards';
+import CoffeeLine from '../../CoffeeLine/CoffeeLine';
 
 export default class OurCoffee extends Component {
   constructor() {
@@ -65,11 +66,21 @@ export default class OurCoffee extends Component {
                 <div className="cardWrapper__description_title">
                   {currentCard.card.name}
                 </div>
+                <CoffeeLine />
+                <div className="cardWrapper__description_country">
+                  Country:
+                  {' '}
+                  {currentCard.card.country}
+                </div>
                 <div className="cardWrapper__description_description">
+                  Description:
+                  {' '}
                   {currentCard.card.description}
                 </div>
                 <div className="cardWrapper__description_price">
-                  {currentCard.card.price}
+                  Price:
+                  {' '}
+                  <span>{`${currentCard.card.price}$`}</span>
                 </div>
               </div>
             </div>
