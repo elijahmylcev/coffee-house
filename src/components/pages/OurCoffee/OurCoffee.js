@@ -28,11 +28,12 @@ export default class OurCoffee extends Component {
       },
       filter: 'All',
       currentCard: {
-        status: true,
+        status: false,
         card: {},
       },
     };
     this.changeFilter = this.changeFilter.bind(this);
+    this.OnCurrentCard = this.OnCurrentCard.bind(this);
   }
 
   changeFilter(name) {
@@ -41,10 +42,16 @@ export default class OurCoffee extends Component {
     });
   }
 
-  // currentCardInList() {
-  //   const { currentCard } = this.state;
-  //   console.log(currentCard.status);
-  // }
+  OnCurrentCard(obj) {
+    // const { currentCard } = this.state;
+    console.log(obj);
+    this.setState({
+      currentCard: {
+        status: true,
+        card: obj,
+      },
+    });
+  }
 
   render() {
     const { about, filter, currentCard } = this.state;
@@ -52,7 +59,20 @@ export default class OurCoffee extends Component {
       if (currentCard.status) {
         return (
           <div className="container">
-            <p>Hello</p>
+            <div className="cardWrapper">
+              <img src={currentCard.card.img} alt="Coffee" className="cardWrapper__img" />
+              <div className="cardWrapper__description">
+                <div className="cardWrapper__description_title">
+                  {currentCard.card.name}
+                </div>
+                <div className="cardWrapper__description_description">
+                  {currentCard.card.description}
+                </div>
+                <div className="cardWrapper__description_price">
+                  {currentCard.card.price}
+                </div>
+              </div>
+            </div>
           </div>
         );
       }
@@ -64,13 +84,13 @@ export default class OurCoffee extends Component {
           </div>
           <div className="stroke" />
           <SearchPanel changeFilter={this.changeFilter} />
-          <ListOfCards filter={filter} />
+          <ListOfCards onCurrentCard={this.OnCurrentCard} filter={filter} />
         </div>
       );
     };
     return (
       <section>
-        {layout()}
+        { layout() }
       </section>
     );
   }

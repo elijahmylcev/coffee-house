@@ -9,6 +9,8 @@ export default class ListOfCards extends Component {
     this.state = {
       cards: cardsList,
     };
+    this.filteredList = this.filteredList.bind(this);
+    this.current = this.current.bind(this);
   }
 
   filteredList() {
@@ -49,11 +51,16 @@ export default class ListOfCards extends Component {
     }
   }
 
+  current(obj) {
+    const { onCurrentCard } = this.props;
+    onCurrentCard(obj);
+  }
+
   render() {
     const test = this.filteredList();
     const elements = test.map((element) => (
       <div
-        onClick={() => console.log(element.id)}
+        onClick={() => this.current(element)}
         className="card"
         key={element.id}
         aria-hidden="true"
@@ -81,6 +88,7 @@ export default class ListOfCards extends Component {
 ListOfCards.propTypes = {
   filter: propTypes.string,
   isBest: propTypes.bool,
+  onCurrentCard: propTypes.func.isRequired,
 };
 ListOfCards.defaultProps = {
   filter: 'All',
