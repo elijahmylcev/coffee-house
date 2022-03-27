@@ -38,13 +38,20 @@
     &_country {
       text-align: left;
       margin-top: 16px;
+      span {
+        font-weight: 700;
+      }
     }
     &_description {
       margin-top: 16px;
       text-align: left;
+      span {
+        font-weight: 700;
+      }
     }
     &_price {
       margin-top: 16px;
+      font-weight: 700;
       span {
         font-weight: 400;
         font-size: 24px;

@@ -68,12 +68,12 @@ export default class OurCoffee extends Component {
                 </div>
                 <CoffeeLine />
                 <div className="cardWrapper__description_country">
-                  Country:
+                  <span>Country:</span>
                   {' '}
                   {currentCard.card.country}
                 </div>
                 <div className="cardWrapper__description_description">
-                  Description:
+                  <span>Description:</span>
                   {' '}
                   {currentCard.card.description}
                 </div>
