@@ -4,11 +4,6 @@ import ListOfCards from '../ListOfCards/ListOfCards';
 import './OurBest.scss';
 
 class OurBest extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props);
-  }
-
   onCurrentCard(element) {
     const { onCurrentCardInOurBest } = this.props;
     onCurrentCardInOurBest(element);

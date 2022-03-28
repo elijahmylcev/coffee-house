@@ -30,7 +30,9 @@ class App extends Component {
           ),
           status: true,
           classes: 'header__main',
-          mainLayout: (<MainPage />),
+          mainLayout: (<MainPage
+            onCurrentCardInMain={(elem, i) => this.onCurrentCardInMain(elem, i)}
+          />),
         },
         {
           id: 2,
@@ -53,6 +55,10 @@ class App extends Component {
       ],
     };
     this.changePage = this.changePage.bind(this);
+  }
+
+  onCurrentCardInMain(elem, index) {
+    this.changePage(index);
   }
 
   changePage(index) {

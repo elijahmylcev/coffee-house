@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import propTypes from 'prop-types';
 import './MainPage.scss';
 import About from '../../About/About';
 import OurBest from '../../OurBest/OurBest';
@@ -33,7 +34,8 @@ export default class MainPage extends Component {
   }
 
   onCurrentCard(elem) {
-    console.log(elem, this);
+    const { onCurrentCardInMain } = this.props;
+    onCurrentCardInMain(elem, 2);
   }
 
   render() {
@@ -41,8 +43,16 @@ export default class MainPage extends Component {
     return (
       <section>
         <About {...about} />
-        <OurBest onCurrentCardInOurBest={this.onCurrentCard} />
+        <OurBest onCurrentCardInOurBest={(elem) => this.onCurrentCard(elem)} />
       </section>
     );
   }
 }
+
+MainPage.propTypes = {
+  onCurrentCardInMain: propTypes.func,
+};
+
+MainPage.defaultProps = {
+  onCurrentCardInMain: () => {},
+};
