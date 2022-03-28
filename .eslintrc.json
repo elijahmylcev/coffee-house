@@ -37,7 +37,7 @@
             3
         ],
         "no-console": "off",
-        "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp"] }],
+        "class-methods-use-this": ["error", { "exceptMethods": ["searchEmp", "render"] }],
         "no-param-reassign": ["error", { "props": false }],
         "react/no-unstable-nested-components": [
             "off" ,

@@ -19,5 +19,9 @@ export default function About(props) {
 
 About.propTypes = {
   title: propTypes.string.isRequired,
-  description: propTypes.func.isRequired,
+  description: propTypes.func,
+};
+
+About.defaultProps = {
+  description: () => {},
 };

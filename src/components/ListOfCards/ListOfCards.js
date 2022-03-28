@@ -88,9 +88,10 @@ export default class ListOfCards extends Component {
 ListOfCards.propTypes = {
   filter: propTypes.string,
   isBest: propTypes.bool,
-  onCurrentCard: propTypes.func.isRequired,
+  onCurrentCard: propTypes.func,
 };
 ListOfCards.defaultProps = {
   filter: 'All',
   isBest: false,
+  onCurrentCard: () => {},
 };

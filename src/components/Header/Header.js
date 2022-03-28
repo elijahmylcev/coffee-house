@@ -23,7 +23,11 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  layout: propTypes.func.isRequired,
+  layout: propTypes.func,
   sendClass: propTypes.string.isRequired,
   changePage: propTypes.func.isRequired,
+};
+
+Header.defaultProps = {
+  layout: () => {},
 };
