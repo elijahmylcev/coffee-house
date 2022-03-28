@@ -4,8 +4,8 @@ import About from '../../About/About';
 import OurBest from '../../OurBest/OurBest';
 
 export default class MainPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       about: {
         id: 1,
@@ -32,12 +32,16 @@ export default class MainPage extends Component {
     };
   }
 
+  onCurrentCard(elem) {
+    console.log(elem, this);
+  }
+
   render() {
     const { about } = this.state;
     return (
       <section>
         <About {...about} />
-        <OurBest />
+        <OurBest onCurrentCardInOurBest={this.onCurrentCard} />
       </section>
     );
   }
