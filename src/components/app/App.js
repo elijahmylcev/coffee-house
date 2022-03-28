@@ -20,7 +20,7 @@ class App extends Component {
             <div className="wrapperMain">
               <h1>Everything You Love About Coffee</h1>
               <CoffeeLine classInp="white" />
-              <p>
+              <p className="description">
                 We makes every day full of energy and taste
                 <br />
                 Want to try our beans?

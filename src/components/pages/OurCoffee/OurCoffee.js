@@ -44,8 +44,6 @@ export default class OurCoffee extends Component {
   }
 
   OnCurrentCard(obj) {
-    // const { currentCard } = this.state;
-    console.log(obj);
     this.setState({
       currentCard: {
         status: true,
