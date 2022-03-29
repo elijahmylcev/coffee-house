@@ -28,6 +28,7 @@ export default class OurCoffee extends Component {
         ),
       },
       filter: 'All',
+      term: '',
       currentCard: {
         status: false,
         card: {},
@@ -35,6 +36,7 @@ export default class OurCoffee extends Component {
     };
     this.changeFilter = this.changeFilter.bind(this);
     this.OnCurrentCard = this.OnCurrentCard.bind(this);
+    this.changeTerm = this.changeTerm.bind(this);
   }
 
   changeFilter(name) {
@@ -52,8 +54,19 @@ export default class OurCoffee extends Component {
     });
   }
 
+  changeTerm(term) {
+    this.setState({
+      term,
+    });
+  }
+
   render() {
-    const { about, filter, currentCard } = this.state;
+    const {
+      about, filter, currentCard, term,
+    } = this.state;
+
+    console.log(term);
+
     const layout = () => {
       if (currentCard.status) {
         return (
@@ -92,8 +105,8 @@ export default class OurCoffee extends Component {
             <About {...about} />
           </div>
           <div className="stroke" />
-          <SearchPanel changeFilter={this.changeFilter} />
-          <ListOfCards onCurrentCard={this.OnCurrentCard} filter={filter} />
+          <SearchPanel changeFilter={this.changeFilter} onChangeTerm={this.changeTerm} />
+          <ListOfCards onCurrentCard={this.OnCurrentCard} filter={filter} term={term} />
         </div>
       );
     };

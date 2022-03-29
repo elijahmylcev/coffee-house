@@ -12,6 +12,7 @@ export default class SearchPanel extends Component {
         { id: 3, name: 'Kenya', status: false },
         { id: 4, name: 'Columbia', status: false },
       ],
+      term: '',
     };
   }
 
@@ -30,8 +31,16 @@ export default class SearchPanel extends Component {
     changeFilter(name);
   }
 
+  onChangeFilterPlaceholder(e) {
+    const { onChangeTerm } = this.props;
+    this.setState({
+      term: e.target.value,
+    });
+    onChangeTerm(e.target.value);
+  }
+
   render() {
-    const { filterButtons } = this.state;
+    const { filterButtons, term } = this.state;
     const elements = filterButtons.map((item) => {
       let classList = 'filter__buttons_element';
       if (item.status) {
@@ -58,6 +67,8 @@ export default class SearchPanel extends Component {
                 type="text"
                 className="filter__search_input"
                 placeholder="start typing here..."
+                value={term}
+                onChange={(e) => this.onChangeFilterPlaceholder(e)}
               />
             </div>
             <div className="filter__buttons">
@@ -73,4 +84,5 @@ export default class SearchPanel extends Component {
 
 SearchPanel.propTypes = {
   changeFilter: propTypes.func.isRequired,
+  onChangeTerm: propTypes.func.isRequired,
 };
