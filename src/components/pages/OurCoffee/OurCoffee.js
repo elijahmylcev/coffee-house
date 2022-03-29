@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import propTypes from 'prop-types';
 import './OurCoffee.scss';
 import About from '../../About/About';
 import photo from '../../../img/mask-group.png';
@@ -7,8 +8,8 @@ import ListOfCards from '../../ListOfCards/ListOfCards';
 import CoffeeLine from '../../CoffeeLine/CoffeeLine';
 
 export default class OurCoffee extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       about: {
         id: 2,
@@ -115,3 +116,13 @@ export default class OurCoffee extends Component {
     );
   }
 }
+
+OurCoffee.propTypes = {
+  status: propTypes.bool,
+  element: propTypes.func,
+};
+
+OurCoffee.defaultProps = {
+  status: false,
+  element: null,
+};

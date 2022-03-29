@@ -9,9 +9,13 @@ import OurCoffee from '../pages/OurCoffee/OurCoffee';
 import ForYourPleasure from '../pages/ForYourPleasure/ForYourPleasure';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      currentCard: {
+        status: false,
+        element: {},
+      },
       contentPage: [
         {
           id: 1,
@@ -58,6 +62,11 @@ class App extends Component {
   }
 
   onCurrentCardInMain(elem, index) {
+    this.setState(({ currentCard }) => {
+      currentCard.status = true;
+      currentCard.element = elem;
+    });
+
     this.changePage(index);
   }
 
