@@ -38,6 +38,7 @@ export default class OurCoffee extends Component {
     this.changeFilter = this.changeFilter.bind(this);
     this.OnCurrentCard = this.OnCurrentCard.bind(this);
     this.changeTerm = this.changeTerm.bind(this);
+    this.clear = this.clear.bind(this);
   }
 
   changeFilter(name) {
@@ -58,6 +59,15 @@ export default class OurCoffee extends Component {
   changeTerm(term) {
     this.setState({
       term,
+    });
+  }
+
+  clear() {
+    this.setState({
+      currentCard: {
+        status: false,
+        card: {},
+      },
     });
   }
 
@@ -94,6 +104,13 @@ export default class OurCoffee extends Component {
                 </div>
               </div>
             </div>
+            <button
+              type="button"
+              className="btn"
+              onClick={this.clear}
+            >
+              Back
+            </button>
           </div>
         );
       }
