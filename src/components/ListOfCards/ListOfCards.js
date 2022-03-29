@@ -11,11 +11,26 @@ export default class ListOfCards extends Component {
     };
     this.filteredList = this.filteredList.bind(this);
     this.current = this.current.bind(this);
+    this.filterByTerm = this.filterByTerm.bind(this);
+  }
+
+  filterByTerm() {
+    const { cards } = this.state;
+    const { term } = this.props;
+
+    if (term.length === 0) {
+      return cards;
+    }
+    return cards.filter((item) => item.name.toLowerCase().indexOf(term.toLowerCase()) > -1);
   }
 
   filteredList() {
-    const { cards } = this.state;
+    // const { cards } = this.state;
     const { filter, isBest } = this.props;
+
+    const cards = this.filterByTerm();
+    console.log(cards);
+
     if (isBest) {
       return cards.filter((item) => {
         if (item.isBest) {
@@ -89,9 +104,11 @@ ListOfCards.propTypes = {
   filter: propTypes.string,
   isBest: propTypes.bool,
   onCurrentCard: propTypes.func,
+  term: propTypes.string,
 };
 ListOfCards.defaultProps = {
   filter: 'All',
   isBest: false,
   onCurrentCard: () => {},
+  term: '',
 };

@@ -65,8 +65,6 @@ export default class OurCoffee extends Component {
       about, filter, currentCard, term,
     } = this.state;
 
-    console.log(term);
-
     const layout = () => {
       if (currentCard.status) {
         return (
