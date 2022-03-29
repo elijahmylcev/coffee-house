@@ -29,7 +29,6 @@ export default class ListOfCards extends Component {
     const { filter, isBest } = this.props;
 
     const cards = this.filterByTerm();
-    console.log(cards);
 
     if (isBest) {
       return cards.filter((item) => {
