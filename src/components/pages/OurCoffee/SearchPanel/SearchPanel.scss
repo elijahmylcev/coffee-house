@@ -47,7 +47,7 @@
       line-height: 17px;
       text-align: center;
       color: #000000;
-      transition: all 0.4s ease;
+      transition: all 0.4s ease-in-out;
       &:last-child {
         margin-right: none;
       }

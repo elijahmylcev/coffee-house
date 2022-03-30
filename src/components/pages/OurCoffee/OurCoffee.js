@@ -104,13 +104,25 @@ export default class OurCoffee extends Component {
                 </div>
               </div>
             </div>
-            <button
-              type="button"
-              className="btn"
-              onClick={this.clear}
-            >
-              Back
-            </button>
+            <div className="btnWrapper">
+              <button
+                type="button"
+                className="btnWrapper__btn"
+                onClick={this.clear}
+              >
+                {' '}
+                &larr;
+                Back
+              </button>
+              <button
+                type="button"
+                className="btnWrapper__btn"
+              >
+                Buy
+                {' '}
+                &#9749;
+              </button>
+            </div>
           </div>
         );
       }
