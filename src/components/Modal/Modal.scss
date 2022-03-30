@@ -4,4 +4,24 @@
   position: fixed;
   height: 100%;
   top: 0;
+  .modal {
+    background-color: #fff;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 200px;
+    padding: 38px 40px 40px 40px;
+    &__header {
+      &_close {
+        position: absolute;
+        top: 0;
+        right: -41px;
+        line-height: 21px;
+        font-size: 50px;
+        cursor: pointer;
+      }
+    }
+  }
 }

@@ -14,8 +14,13 @@ class Modal extends Component {
           <div className="container">
             <div className="modal">
               <div className="modal__header">
-                <div className="modal__header_title">{title}</div>
+                <div className="modal__header_title">
+                  {' '}
+                  {title}
+                  {' '}
+                </div>
                 <div
+                  className="modal__header_close"
                   onClick={onCancel}
                   aria-hidden="true"
                 >
@@ -48,7 +53,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   display: false,
-  title: 'lorem',
+  title: 'Modal Title',
   onSubmit: () => {},
   onCancel: () => {},
   children: null,

@@ -100,7 +100,7 @@ class App extends Component {
         <main>
           {content.mainLayout}
         </main>
-        <Modal display />
+        <Modal display title="hello" />
         <Footer changePage={this.changePage} />
       </div>
     );
