@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.55259ae7.css",
-    "main.js": "/static/js/main.10b62b1c.js",
+    "main.css": "/static/css/main.1ac82875.css",
+    "main.js": "/static/js/main.b579dc95.js",
     "static/media/ourBest-bg.png": "/static/media/ourBest-bg.2789623e157473e4342a.png",
     "static/media/main-bg.png": "/static/media/main-bg.e7e05c7fbf7fbe942293.png",
     "static/media/forYourPleasure.png": "/static/media/forYourPleasure.8dfe65f246ba5525b789.png",
@@ -14,11 +14,11 @@
     "static/media/Merienda-Regular.ttf": "/static/media/Merienda-Regular.53d1a3f1031a51480ad3.ttf",
     "static/media/Merienda-Bold.ttf": "/static/media/Merienda-Bold.45a68bbd1460a4b81261.ttf",
     "index.html": "/index.html",
-    "main.55259ae7.css.map": "/static/css/main.55259ae7.css.map",
-    "main.10b62b1c.js.map": "/static/js/main.10b62b1c.js.map"
+    "main.1ac82875.css.map": "/static/css/main.1ac82875.css.map",
+    "main.b579dc95.js.map": "/static/js/main.b579dc95.js.map"
   },
   "entrypoints": [
-    "static/css/main.55259ae7.css",
-    "static/js/main.10b62b1c.js"
+    "static/css/main.1ac82875.css",
+    "static/js/main.b579dc95.js"
   ]
 }
