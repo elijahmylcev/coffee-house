@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer';
 import MainPage from '../pages/MainPage/MainPage';
 import OurCoffee from '../pages/OurCoffee/OurCoffee';
 import ForYourPleasure from '../pages/ForYourPleasure/ForYourPleasure';
+import Modal from '../Modal/Modal';
 
 class App extends Component {
   constructor(props) {
@@ -99,6 +100,7 @@ class App extends Component {
         <main>
           {content.mainLayout}
         </main>
+        <Modal display />
         <Footer changePage={this.changePage} />
       </div>
     );
