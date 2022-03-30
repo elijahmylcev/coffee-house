@@ -58,17 +58,20 @@ class App extends Component {
           mainLayout: (<ForYourPleasure />),
         },
       ],
+      displayModal: false,
     };
     this.changePage = this.changePage.bind(this);
+    this.cancelModal = this.cancelModal.bind(this);
   }
 
-  onCurrentCardInMain(elem, index) {
+  onCurrentCardInMain(elem) {
     this.setState(({ currentCard }) => {
       currentCard.status = true;
       currentCard.element = elem;
     });
-
-    this.changePage(index);
+    this.setState({
+      displayModal: true,
+    });
   }
 
   changePage(index) {
@@ -85,8 +88,14 @@ class App extends Component {
     }, this.forceUpdate);
   }
 
+  cancelModal() {
+    this.setState({
+      displayModal: false,
+    });
+  }
+
   render() {
-    const { contentPage } = this.state;
+    const { contentPage, displayModal } = this.state;
     let content;
     contentPage.forEach((item) => {
       if (item.status) {
@@ -100,7 +109,7 @@ class App extends Component {
         <main>
           {content.mainLayout}
         </main>
-        <Modal display title="hello" />
+        <Modal display={displayModal} title="hello" onCancel={this.cancelModal} />
         <Footer changePage={this.changePage} />
       </div>
     );
