@@ -44,5 +44,6 @@
             { "allowAsProps": false }
           ],
           "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }]
+
   }
 }

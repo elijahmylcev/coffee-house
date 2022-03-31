@@ -63,3 +63,17 @@
     }
   }
 }
+
+.childrenWrapper {
+  display: flex;
+  flex-direction: column;
+  &__img {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: right;
+  }
+}

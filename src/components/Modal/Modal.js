@@ -5,8 +5,24 @@ import './Modal.scss';
 class Modal extends Component {
   render() {
     const {
-      display, title, onCancel, onSubmit, children,
+      display, title, onCancel, onSubmit, card,
     } = this.props;
+
+    const children = (
+      <div className="childrenWrapper">
+        <img src={card.img} alt="Element" className="childrenWrapper__img" />
+        <div className="childrenWrapper__description">
+          {' '}
+          {card.description}
+          {' '}
+        </div>
+        <div className="childrenWrapper__price">
+          {' '}
+          {`${card.price}$`}
+          {' '}
+        </div>
+      </div>
+    );
 
     if (display) {
       return (
@@ -52,7 +68,7 @@ Modal.propTypes = {
   title: propTypes.string,
   onCancel: propTypes.func,
   onSubmit: propTypes.func,
-  children: propTypes.node,
+  card: propTypes.func,
 };
 
 Modal.defaultProps = {
@@ -60,7 +76,7 @@ Modal.defaultProps = {
   title: 'Modal Title',
   onSubmit: () => {},
   onCancel: () => {},
-  children: null,
+  card: () => {},
 };
 
 export default Modal;

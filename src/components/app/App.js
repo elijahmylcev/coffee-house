@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Header from '../Header/Header';
 import CoffeeLine from '../CoffeeLine/CoffeeLine';
 
@@ -118,6 +118,7 @@ class App extends Component {
           display={displayModal}
           title={currentCard.element.name}
           onCancel={this.cancelModal}
+          card={currentCard.element}
         />
         <Footer changePage={this.changePage} />
       </div>
