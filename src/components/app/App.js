@@ -59,9 +59,11 @@ class App extends Component {
         },
       ],
       displayModal: false,
+      onBuy: false,
     };
     this.changePage = this.changePage.bind(this);
     this.cancelModal = this.cancelModal.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onCurrentCardInMain(elem) {
@@ -72,6 +74,39 @@ class App extends Component {
     this.setState({
       displayModal: true,
     });
+  }
+
+  onSubmit(e) {
+    const { onBuy } = this.state;
+    if (onBuy) {
+      this.cancelModal(e);
+    } else {
+      this.setState({
+        onBuy: true,
+      });
+    }
+  }
+
+  cancelModal(e) {
+    const { onBuy } = this.state;
+    if (e && (e.target.className === 'modalOverlay'
+    || e.target.className === 'close'
+    || e.target.className === 'modal__header_close')
+    ) {
+      this.setState({
+        displayModal: false,
+        onBuy: false,
+      });
+    }
+    if (onBuy && e && (e.target.className === 'modalOverlay'
+    || e.target.className === 'close'
+    || e.target.className === 'modal__header_close'
+    || e.target.className === 'submit')) {
+      this.setState({
+        displayModal: false,
+        onBuy: false,
+      });
+    }
   }
 
   changePage(index) {
@@ -88,19 +123,10 @@ class App extends Component {
     }, this.forceUpdate);
   }
 
-  cancelModal(e) {
-    if (e.target.className === 'modalOverlay'
-    || e.target.className === 'close'
-    || e.target.className === 'modal__header_close') {
-      this.setState({
-        displayModal: false,
-      });
-    }
-    return null;
-  }
-
   render() {
-    const { contentPage, displayModal, currentCard } = this.state;
+    const {
+      contentPage, displayModal, currentCard, onBuy,
+    } = this.state;
     let content;
     contentPage.forEach((item) => {
       if (item.status) {
@@ -118,7 +144,9 @@ class App extends Component {
           display={displayModal}
           title={currentCard.element.name}
           onCancel={this.cancelModal}
+          onSubmit={this.onSubmit}
           card={currentCard.element}
+          onBuy={onBuy}
         />
         <Footer changePage={this.changePage} />
       </div>

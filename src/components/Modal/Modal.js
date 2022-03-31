@@ -5,24 +5,35 @@ import './Modal.scss';
 class Modal extends Component {
   render() {
     const {
-      display, title, onCancel, onSubmit, card,
+      display, title, onCancel, onSubmit, card, onBuy,
     } = this.props;
 
-    const children = (
-      <div className="childrenWrapper">
-        <img src={card.img} alt="Element" className="childrenWrapper__img" />
-        <div className="childrenWrapper__description">
-          {' '}
-          {card.description}
-          {' '}
+    let children;
+
+    if (onBuy) {
+      children = (
+        <form action="submit">
+          <input type="text" />
+          <input type="text" />
+        </form>
+      );
+    } else {
+      children = (
+        <div className="childrenWrapper">
+          <img src={card.img} alt="Element" className="childrenWrapper__img" />
+          <div className="childrenWrapper__description">
+            {' '}
+            {card.description}
+            {' '}
+          </div>
+          <div className="childrenWrapper__price">
+            {' '}
+            {`${card.price}$`}
+            {' '}
+          </div>
         </div>
-        <div className="childrenWrapper__price">
-          {' '}
-          {`${card.price}$`}
-          {' '}
-        </div>
-      </div>
-    );
+      );
+    }
 
     if (display) {
       return (
@@ -50,7 +61,7 @@ class Modal extends Component {
               <div className="modal__body">{children}</div>
               <div className="modal__footer">
                 <button type="button" className="close" onClick={onCancel}>Cancel</button>
-                <button type="button" onClick={onSubmit}>Buy &#9749;</button>
+                <button type="button" className="submit" onClick={onSubmit}>Buy &#9749;</button>
               </div>
             </div>
           </div>
@@ -65,6 +76,7 @@ class Modal extends Component {
 
 Modal.propTypes = {
   display: propTypes.bool,
+  onBuy: propTypes.bool,
   title: propTypes.string,
   onCancel: propTypes.func,
   onSubmit: propTypes.func,
@@ -73,6 +85,7 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   display: false,
+  onBuy: false,
   title: 'Modal Title',
   onSubmit: () => {},
   onCancel: () => {},

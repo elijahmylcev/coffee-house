@@ -15,7 +15,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10px;
     &__header {
       &_title {
@@ -71,7 +71,12 @@
     max-width: 300px;
     margin: 0 auto;
   }
+  &__description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
   &__price {
+    margin-top: 10px;
     font-size: 20px;
     font-weight: 700;
     text-align: right;
