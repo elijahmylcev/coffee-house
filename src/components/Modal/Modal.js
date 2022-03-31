@@ -12,9 +12,14 @@ class Modal extends Component {
 
     if (onBuy) {
       children = (
-        <form action="submit">
-          <input type="text" />
-          <input type="text" />
+        <form className="childrenWrapper" action="submit">
+          <input className="childrenWrapper__input" type="text" placeholder="name..." />
+          <input className="childrenWrapper__input" type="text" placeholder="email..." />
+          <div className="childrenWrapper__price">
+            {' '}
+            {`${card.price}$`}
+            {' '}
+          </div>
         </form>
       );
     } else {

@@ -6,6 +6,7 @@ import photo from '../../../img/mask-group.png';
 import SearchPanel from './SearchPanel/SearchPanel';
 import ListOfCards from '../../ListOfCards/ListOfCards';
 import CoffeeLine from '../../CoffeeLine/CoffeeLine';
+import Modal from '../../Modal/Modal';
 
 export default class OurCoffee extends Component {
   constructor(props) {
@@ -34,16 +35,31 @@ export default class OurCoffee extends Component {
         status: false,
         card: {},
       },
+      displayModal: false,
     };
     this.changeFilter = this.changeFilter.bind(this);
     this.OnCurrentCard = this.OnCurrentCard.bind(this);
     this.changeTerm = this.changeTerm.bind(this);
     this.clear = this.clear.bind(this);
+    this.onCancel = this.onCancel.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
 
-  changeFilter(name) {
+  onCancel(e) {
+    if (e && (e.target.className === 'modalOverlay'
+    || e.target.className === 'close'
+    || e.target.className === 'modal__header_close'
+    || e.target.className === 'submit')
+    ) {
+      this.setState({
+        displayModal: false,
+      });
+    }
+  }
+
+  openModal() {
     this.setState({
-      filter: name,
+      displayModal: true,
     });
   }
 
@@ -71,59 +87,75 @@ export default class OurCoffee extends Component {
     });
   }
 
+  changeFilter(name) {
+    this.setState({
+      filter: name,
+    });
+  }
+
   render() {
     const {
-      about, filter, currentCard, term,
+      about, filter, currentCard, term, displayModal,
     } = this.state;
 
     const layout = () => {
       if (currentCard.status) {
         return (
-          <div className="container">
-            <div className="cardWrapper">
-              <img src={currentCard.card.img} alt="Coffee" className="cardWrapper__img" />
-              <div className="cardWrapper__description">
-                <div className="cardWrapper__description_title">
-                  {currentCard.card.name}
-                </div>
-                <CoffeeLine />
-                <div className="cardWrapper__description_country">
-                  <span>Country:</span>
-                  {' '}
-                  {currentCard.card.country}
-                </div>
-                <div className="cardWrapper__description_description">
-                  <span>Description:</span>
-                  {' '}
-                  {currentCard.card.description}
-                </div>
-                <div className="cardWrapper__description_price">
-                  Price:
-                  {' '}
-                  <span>{`${currentCard.card.price}$`}</span>
+          <>
+            <div className="container">
+              <div className="cardWrapper">
+                <img src={currentCard.card.img} alt="Coffee" className="cardWrapper__img" />
+                <div className="cardWrapper__description">
+                  <div className="cardWrapper__description_title">
+                    {currentCard.card.name}
+                  </div>
+                  <CoffeeLine />
+                  <div className="cardWrapper__description_country">
+                    <span>Country:</span>
+                    {' '}
+                    {currentCard.card.country}
+                  </div>
+                  <div className="cardWrapper__description_description">
+                    <span>Description:</span>
+                    {' '}
+                    {currentCard.card.description}
+                  </div>
+                  <div className="cardWrapper__description_price">
+                    Price:
+                    {' '}
+                    <span>{`${currentCard.card.price}$`}</span>
+                  </div>
                 </div>
               </div>
+              <div className="btnWrapper">
+                <button
+                  type="button"
+                  className="btnWrapper__btn"
+                  onClick={this.clear}
+                >
+                  {' '}
+                  &larr;
+                  Back
+                </button>
+                <button
+                  type="button"
+                  className="btnWrapper__btn"
+                  onClick={this.openModal}
+                >
+                  Buy
+                  {' '}
+                  &#9749;
+                </button>
+              </div>
             </div>
-            <div className="btnWrapper">
-              <button
-                type="button"
-                className="btnWrapper__btn"
-                onClick={this.clear}
-              >
-                {' '}
-                &larr;
-                Back
-              </button>
-              <button
-                type="button"
-                className="btnWrapper__btn"
-              >
-                Buy
-                {' '}
-                &#9749;
-              </button>
-            </div>
-          </div>
+            <Modal
+              card={currentCard.card}
+              title={currentCard.card.name}
+              onCancel={this.onCancel}
+              display={displayModal}
+              onBuy
+            />
+          </>
         );
       }
       return (
