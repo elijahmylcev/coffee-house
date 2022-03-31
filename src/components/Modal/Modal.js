@@ -29,8 +29,8 @@ class Modal extends Component {
               </div>
               <div className="modal__body">{children}</div>
               <div className="modal__footer">
-                <button type="button" onClick={onSubmit}>Submit</button>
                 <button type="button" onClick={onCancel}>Cancel</button>
+                <button type="button" onClick={onSubmit}>Buy &#9749;</button>
               </div>
             </div>
           </div>
