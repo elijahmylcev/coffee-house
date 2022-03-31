@@ -6,16 +6,21 @@
   top: 0;
   .modal {
     background-color: #fff;
-    width: 40%;
+    min-width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-height: 200px;
-    padding: 38px 40px 40px 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
     &__header {
       &_title {
-        font-size: 16px;
+        font-size: 20px;
+        text-align: center;
       }
       &_close {
         position: absolute;
@@ -25,6 +30,9 @@
         font-size: 50px;
         cursor: pointer;
       }
+    }
+    &_body {
+      padding: 10px 0;
     }
     &__footer {
       display: flex;

@@ -88,14 +88,19 @@ class App extends Component {
     }, this.forceUpdate);
   }
 
-  cancelModal() {
-    this.setState({
-      displayModal: false,
-    });
+  cancelModal(e) {
+    if (e.target.className === 'modalOverlay'
+    || e.target.className === 'close'
+    || e.target.className === 'modal__header_close') {
+      this.setState({
+        displayModal: false,
+      });
+    }
+    return null;
   }
 
   render() {
-    const { contentPage, displayModal } = this.state;
+    const { contentPage, displayModal, currentCard } = this.state;
     let content;
     contentPage.forEach((item) => {
       if (item.status) {
@@ -109,7 +114,11 @@ class App extends Component {
         <main>
           {content.mainLayout}
         </main>
-        <Modal display={displayModal} title="hello" onCancel={this.cancelModal} />
+        <Modal
+          display={displayModal}
+          title={currentCard.element.name}
+          onCancel={this.cancelModal}
+        />
         <Footer changePage={this.changePage} />
       </div>
     );

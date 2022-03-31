@@ -10,7 +10,11 @@ class Modal extends Component {
 
     if (display) {
       return (
-        <div className="modalOverlay">
+        <div
+          className="modalOverlay"
+          onClick={onCancel}
+          aria-hidden="true"
+        >
           <div className="container">
             <div className="modal">
               <div className="modal__header">
@@ -29,7 +33,7 @@ class Modal extends Component {
               </div>
               <div className="modal__body">{children}</div>
               <div className="modal__footer">
-                <button type="button" onClick={onCancel}>Cancel</button>
+                <button type="button" className="close" onClick={onCancel}>Cancel</button>
                 <button type="button" onClick={onSubmit}>Buy &#9749;</button>
               </div>
             </div>
