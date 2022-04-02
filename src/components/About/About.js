@@ -19,7 +19,7 @@ export default function About(props) {
 
 About.propTypes = {
   title: propTypes.string.isRequired,
-  description: propTypes.func,
+  description: propTypes.node,
 };
 
 About.defaultProps = {

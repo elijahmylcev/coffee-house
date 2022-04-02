@@ -85,7 +85,17 @@ Modal.propTypes = {
   title: propTypes.string,
   onCancel: propTypes.func,
   onSubmit: propTypes.func,
-  card: propTypes.func,
+  card: propTypes.objectOf(
+    {
+      id: propTypes.number,
+      name: propTypes.string,
+      country: propTypes.string,
+      description: propTypes.string,
+      img: propTypes.string,
+      price: propTypes.number,
+      isBest: propTypes.boolean,
+    },
+  ),
 };
 
 Modal.defaultProps = {
