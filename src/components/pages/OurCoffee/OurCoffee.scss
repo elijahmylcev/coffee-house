@@ -96,4 +96,29 @@
     grid-template-columns: none;
     grid-auto-flow: row;
   }
+
+  .cardWrapper {
+    flex-direction: column;
+    gap: 10px;
+    &__img {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    &__description {
+      margin-top: 12px;
+      &_title {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      &_country {
+        font-size: 14px;
+      }
+      &_description {
+        font-size: 14px;
+      }
+      &_price {
+        font-size: 14px;
+      }
+    }
+  }
 }

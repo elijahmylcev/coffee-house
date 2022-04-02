@@ -37,12 +37,13 @@ header {
 }
 
 @media (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
   .wrapperMain {
     margin-top: 140px;
-    h1 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
+    
     .description {
       font-size: 15px;
       line-height: 22px;
