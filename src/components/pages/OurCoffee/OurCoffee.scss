@@ -122,3 +122,11 @@
     }
   }
 }
+
+@media (max-width: 320px) {
+  .btnWrapper {
+    &__btn {
+      padding: 10px;
+    }
+  }
+}

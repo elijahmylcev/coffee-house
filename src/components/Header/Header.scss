@@ -56,3 +56,24 @@ header {
     }
   }
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .wrapperMain {
+    margin-top: 80px;
+    
+    .description {
+      font-size: 12px;
+      line-height: 22px;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 10px;
+      margin-bottom: 65px;
+    }
+  }
+}

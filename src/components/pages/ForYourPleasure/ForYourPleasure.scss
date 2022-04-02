@@ -25,6 +25,17 @@
     grid-auto-flow: row;
     .aboutPhoto {
       margin: 0 auto;
+      width: 90%;
     }
   }
 }
+
+// @media (max-width: 320px) {
+//   .info {
+//     grid-template-columns: none;
+//     grid-auto-flow: row;
+//     .aboutPhoto {
+//       margin: 0 auto;
+//     }
+//   }
+// }
