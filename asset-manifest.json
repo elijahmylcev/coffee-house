@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/coffee-house/static/css/main.e2d8ca6e.css",
-    "main.js": "/coffee-house/static/js/main.e2b4cbfc.js",
+    "main.css": "/coffee-house/static/css/main.81cfd2a3.css",
+    "main.js": "/coffee-house/static/js/main.7160545f.js",
     "static/media/ourBest-bg.png": "/coffee-house/static/media/ourBest-bg.2789623e157473e4342a.png",
     "static/media/main-bg.png": "/coffee-house/static/media/main-bg.e7e05c7fbf7fbe942293.png",
     "static/media/forYourPleasure.png": "/coffee-house/static/media/forYourPleasure.8dfe65f246ba5525b789.png",
@@ -14,11 +14,11 @@
     "static/media/Merienda-Regular.ttf": "/coffee-house/static/media/Merienda-Regular.53d1a3f1031a51480ad3.ttf",
     "static/media/Merienda-Bold.ttf": "/coffee-house/static/media/Merienda-Bold.45a68bbd1460a4b81261.ttf",
     "index.html": "/coffee-house/index.html",
-    "main.e2d8ca6e.css.map": "/coffee-house/static/css/main.e2d8ca6e.css.map",
-    "main.e2b4cbfc.js.map": "/coffee-house/static/js/main.e2b4cbfc.js.map"
+    "main.81cfd2a3.css.map": "/coffee-house/static/css/main.81cfd2a3.css.map",
+    "main.7160545f.js.map": "/coffee-house/static/js/main.7160545f.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2d8ca6e.css",
-    "static/js/main.e2b4cbfc.js"
+    "static/css/main.81cfd2a3.css",
+    "static/js/main.7160545f.js"
   ]
 }
