@@ -89,7 +89,7 @@ export default class ForYourPleasure extends Component {
       <section>
         <div className="container">
           <div className="info">
-            <img src={photo} alt="CoolPhoto" />
+            <img src={photo} alt="CoolPhoto" className="aboutPhoto" />
             <About {...about} />
           </div>
           <div className="stroke" />

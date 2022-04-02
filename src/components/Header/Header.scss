@@ -35,3 +35,23 @@ header {
   line-height: 35px;
   color: #FFFFFF;
 }
+
+@media (max-width: 768px) {
+  .wrapperMain {
+    margin-top: 140px;
+    h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .description {
+      font-size: 15px;
+      line-height: 22px;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 10px;
+      margin-bottom: 65px;
+    }
+  }
+}

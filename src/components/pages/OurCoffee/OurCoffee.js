@@ -161,7 +161,7 @@ export default class OurCoffee extends Component {
       return (
         <div className="container">
           <div className="info">
-            <img src={photo} alt="CoolPhoto" />
+            <img src={photo} alt="CoolPhoto" className="aboutPhoto" />
             <About {...about} />
           </div>
           <div className="stroke" />
