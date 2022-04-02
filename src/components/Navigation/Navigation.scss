@@ -22,3 +22,15 @@
 .white {
   color: #fff
 }
+
+@media (max-width: 768px) {
+  .menu {
+    gap: 12px;
+    &__item {
+      font-size: 14px;
+      img {
+        width: 30px;
+      }
+    }
+  }
+}

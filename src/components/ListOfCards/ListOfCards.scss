@@ -45,3 +45,16 @@
     margin-top: 14px;
   }
 }
+
+@media (max-width: 1024px) {
+  .cardsWrapper {
+    gap: 20px
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsWrapper {
+    grid-template-columns: none;
+    grid-auto-flow: row;
+  }
+}
